@@ -1,0 +1,23 @@
+<div class="content">
+  <form type="GET" action="{% url 'page:entries' %}" style="margin: 0">
+    <input id="searcher" class="u-full-width" type="search" name="keyword" placeholder="Buscar..." style="margin:0px;">
+</form>
+</div>
+<div class="content">
+    <h3>Categorias</h3>
+    {% for category in categories %}
+        <a class="category" href="{% url 'page:entries' %}?type=category&keyword={{category.name}}">
+            <span>{{category.name}}</span>
+        </a><br>
+    {% endfor %}
+</div>
+<div class="content">
+    <h3><i class="fa fa-tag" aria-hidden="true"></i> Tags</h3><br>
+    {% for tag in tags %}
+        <a class="tagger" href="{% url 'page:entries' %}?type=tag&keyword={{tag.name}}">
+            <div style="display: inline-block" class='tag'>
+                {{tag.name}}
+            </div>
+        </a>
+    {% endfor %}
+</div>

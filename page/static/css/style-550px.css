@@ -1,0 +1,25 @@
+/*-------------------------------------------------------------550px------*/
+
+@media (min-width: 550px) {
+  html {
+      overflow-y: scroll;
+      background-image: url("../img/deg.png"), url("../img/madera2.jpg");
+      background-attachment: scroll, fixed !important;
+      background-size: auto, cover !important;
+      background-position: top, center;
+      background-repeat: no-repeat, no-repeat;
+      color: gainsboro;
+      font-size: 10px;
+      user-select: none;
+  }
+
+  .contactForm{
+    border-radius:0px;
+    margin:0px;
+    top:15px;
+    left:15px;
+    bottom: auto;
+    width: auto;
+    height: auto;
+  }
+}

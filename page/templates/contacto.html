@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load staticfiles%}
+{% block title %}Contacto - Adriex Designs{% endblock %}
+{% block body %}
+<div class="container">
+    {% if msg %}
+    <div class="content" style="margin-bottom:15px">
+        {{msg}}
+    </div>
+    {% endif %}
+        <div id="contactWrapper" class="row" style="min-height:400px;position:relative;">
+            <div class="textEntry six columns content contactForm" style="">
+                <form role="form" action="" method="post">
+                    <h3>Contacto</h3><br>
+                    {% csrf_token %}
+                    {{ form.as_table }}
+                    <button type="submit" class="u-full-width">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

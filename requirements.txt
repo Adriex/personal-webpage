@@ -1,0 +1,7 @@
+dj-database-url==0.4.1
+Django==1.10.3
+django-tinymce==2.4.0
+django-url-tools==0.0.8
+gunicorn==19.6.0
+psycopg2==2.4.5
+whitenoise==3.2.2

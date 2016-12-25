@@ -1,0 +1,309 @@
+/*HTML*/
+
+html {
+    overflow-y: scroll;
+    background-image: url("../img/deg.png"), url("../img/maderaTile.jpg");
+    background-attachment: scroll, scroll;
+    ;
+    background-size: auto, auto;
+    background-position: top, top;
+    background-repeat: no-repeat, repeat-y;
+    color: gainsboro;
+    font-size: 10px;
+    user-select: none;
+}
+
+h3 {
+    margin: 0px
+}
+
+textarea, select, input[type] {
+    background: rgb(45, 45, 45);
+    color: white;
+    border: 1px solid #dcdcdc;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+
+input:-webkit-autofill {
+    background: rgb(45, 45, 45);
+    color: white;
+}
+
+textarea:focus, select:focus, input[type]:focus {
+    border: 1px solid #d20000;
+    outline: 0;
+    transform: scale(1.1);
+    text-shadow: 0 1px 5px #000000;
+    -webkit-box-shadow: 2px -1px 20px 0 #000000;
+    box-shadow: 0px -0px 20 px 0 #000000;
+}
+
+.content, .lb-outerContainer {
+    background: rgb(71, 71, 71);
+    background: rgba(71, 71, 71, 0.8);
+    color: white;
+    width: auto;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+    -webkit-box-shadow: 0px 0px 10px 1px #000000;
+    box-shadow: 0px 0px 10px 1px #000000;
+    padding: 15px;
+    margin-bottom: 8%;
+}
+
+.textEntry {
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: 0px;
+    width: 100%;
+    background: rgb(71, 71, 71);
+    background: rgba(71, 71, 71, 0.6);
+    color: white;
+    -webkit-box-shadow: 0px 0px 10px 1px #000000;
+    box-shadow: 0px 0px 10px 1px #000000;
+    text-align: center;
+}
+
+.contactForm {
+    border-radius: 0px;
+    margin: 0px;
+    bottom: auto;
+    height: 100%;
+    width: 100%;
+}
+
+.portWrap {
+    background-position: center;
+    background-size: cover !important;
+    height: 200px;
+    margin: 0px;
+    display: inline;
+    width: 25%;
+    margin: auto;
+    display: inline-block
+}
+
+button {
+    background-color: red;
+    margin: -3px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 0px;
+    color: white;
+    background: rgb(69, 69, 69);
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+
+textarea {
+    font: 13.3333px Arial;
+}
+
+button:not(.slick-dots li button):hover {
+    background-color: #d20000;
+    transform: scale(1.1);
+    z-index: 4;
+    -webkit-box-shadow: 2px -1px 20px 0 #000000;
+    box-shadow: 2px -1px 20px 0 #000000;
+    color: white;
+}
+
+.lightbox .lb-image {
+    border: 0px solid black;
+}
+
+hr {
+    margin-top: 3px;
+    margin-bottom: 15px;
+    border: 0px;
+    height: 1px;
+    background: -moz-linear-gradient(left, rgba(223, 0, 0, 0) 0%, rgba(223, 0, 0, 0.8) 15%, rgba(223, 0, 0, 1) 19%, rgba(223, 0, 0, 1) 20%, rgba(244, 69, 46, 1) 50%, rgba(226, 10, 6, 1) 81%, rgba(224, 2, 1, 0.8) 85%, rgba(223, 0, 0, 0.75) 86%, rgba(223, 0, 0, 0) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(223, 0, 0, 0) 0%, rgba(223, 0, 0, 0.8) 15%, rgba(223, 0, 0, 1) 19%, rgba(223, 0, 0, 1) 20%, rgba(244, 69, 46, 1) 50%, rgba(226, 10, 6, 1) 81%, rgba(224, 2, 1, 0.8) 85%, rgba(223, 0, 0, 0.75) 86%, rgba(223, 0, 0, 0) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(223, 0, 0, 0) 0%, rgba(223, 0, 0, 0.8) 15%, rgba(223, 0, 0, 1) 19%, rgba(223, 0, 0, 1) 20%, rgba(244, 69, 46, 1) 50%, rgba(226, 10, 6, 1) 81%, rgba(224, 2, 1, 0.8) 85%, rgba(223, 0, 0, 0.75) 86%, rgba(223, 0, 0, 0) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00df0000', endColorstr='#00df0000', GradientType=1);
+    /* IE6-9 */
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: gainsboro;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    cursor: pointer;
+    cursor: hand;
+}
+
+a:not(.notText):hover {
+    color: #d20000;
+    transform: scale(1.1);
+    text-shadow: 0 1px 5px #000000;
+}
+
+
+/*Logo*/
+
+#home-logo {
+    margin: auto;
+    display: block;
+    height: 25vh
+}
+
+
+/*Imagenes de Portfolio*/
+
+.port {
+    border-radius: 4px;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+
+.port:hover {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    -moz-transform: scale3d(1.1, 1.1, 1.1);
+    -ms-transform: scale3d(1.1, 1.1, 1.1);
+    -o-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+    box-shadow: 0 2px 20px #000000;
+}
+
+
+/*Social Media*/
+
+#social {
+    width: auto;
+    text-align: center;
+}
+
+.disapear {
+    display: none;
+}
+
+.fa-stack {
+    display: inline-block;
+    text-shadow: none;
+}
+
+.fa-stack:hover {
+    -webkit-transform: translateY(-3px);
+    -moz-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    -o-transform: translateY(-3px);
+    transform: translateY(-3px);
+    text-shadow: 0 2px 7px #000000;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+
+/*Tags*/
+
+.tag {
+    background: rgb(69, 69, 69);
+    padding: 0px 4px 0px 4px;
+    -webkit-box-shadow: 0 0 5px 0 #000000;
+    box-shadow: 0 0 5px 0 #000000;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    margin-bottom: 6px;
+}
+
+.tag:hover, .tag a:hover {
+    color: white;
+    background: #d20000;
+    transform: scale(1.1);
+    text-shadow: none;
+    -webkit-box-shadow: 0 0 10px 2px #000000;
+    box-shadow: 0 0 10px 2px #000000;
+}
+
+.frame {
+    border-radius: 0px;
+    padding: 10px 10px 3px 10px;
+    margin: 0px;
+}
+
+#contactWrapper {
+    background-image: url('../img/contact2.jpg');
+    background-position: center;
+    background-size: cover !important;
+    height: 80vh;
+}
+
+
+/*Slick Carousel*/
+
+.slick-dots {
+    position: relative;
+    bottom: 45px;
+}
+
+.slick-slider.slick-dotted {
+    margin-bottom: 0px
+}
+
+.slick-dots li button, .slick-dots li.slick-active button {
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+
+.slick-dots li button:before {
+    color: white;
+}
+
+.slick-dots li.slick-active button:before {
+    color: red
+}
+
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/*Footer*/
+
+.footer {
+    margin: auto;
+    margin-top: 15px;
+    color: darkgray;
+    text-align: center;
+    padding: 5px;
+}
+
+
+/*Facebook Comments Plugin*/
+
+#fb-comm-box span a {
+    color: red
+}

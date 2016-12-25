@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load staticfiles%}
+{% load youthumbnail%}
+{% block title %}Adriex Designs{% endblock %}
+{% block body %}
+    <div class="container">
+      {% if entradas.number <= 1 %}
+        <div class="row">
+            <div id='recent' class="twelve columns">
+                <div class="content" style="padding:0px;margin-bottom:3%; height:400px">
+                    <div id="owldemo" class="">
+                        {% for latest in latests %}
+                            {% for i in latest.idLinks.all|dictsortreversed:"pk"|slice:":1" %}
+                            {% if i.video %}
+                                <div style="background:url({{i.link|youthumbnail:'h'}}); height:400px; background-position:center;background-size:cover !important;"></div>
+                            {% else %}
+                              <div style="background:url({{i.link}}); height:400px; background-position:center;background-size:cover !important;"></div>
+                            {% endif %}
+                            {% endfor %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        <div class="row">
+            <div id="all-entries" class="nine columns">
+                {% for entrada in entradas.object_list %}
+                    {% cycle '<div class="row">' '' %}
+                    <div class="six columns ">
+                        <div class="content port" style=";padding:0px;position: relative;">
+                            <a class="noText" href="{% url 'page:seeEntry' entrada.idEntry %}">
+                                {% for i in entrada.idLinks.all|dictsortreversed:"pk"|slice:":1" %}
+                                  {% if i.video %}
+                                    <div style="background:url({{i.link|youthumbnail:'h'}}); height:300px; background-position:center;background-size:cover !important;"></div>
+                                  {% else %}
+                                    <div style="background:url({{i.link}}); height:300px; background-position:center;background-size:cover !important;"></div>
+                                  {% endif %}
+                                {% endfor %}
+                                <div class="textEntry">
+                                    <h3>{{entrada.title}}</h3>
+                                    <p>{{entrada.dateEntry|date:"d/m/Y" }}
+                                        en
+                                        {{entrada.idCategory.name}}</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    {% cycle '' '</div>' %}
+                {% endfor %}
+                {% if not entradas.object_list.count|divisibleby:"2" or entradas.object_list.count <= 1 %}
+              </div>
+                {% endif %}
+
+                <div class="twelve columns">
+                  <div class="content">
+                        <div class="row">
+                          <div class="column" style="text-align:center;width:10%;margin:0px;height:1px">
+                            {% if entradas.has_previous %}
+                                <a href="?page={{ entradas.previous_page_number }}">
+                                  <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                                </a>
+                            {% endif %}
+                          </div>
+                            <div class="column" style="text-align:center;width:80%;margin:0px">
+                                {{ entradas.number }}
+                            </div>
+
+                            <div class="column" style="text-align:center;width:10%;margin:0px;height:1px">
+                            {% if entradas.has_next %}
+                                <a href="?page={{ entradas.next_page_number }}">
+                                  <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="three columns">
+                {% include 'leftMenu.html' %}
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/owl.config.js' %}"></script>
+{% endblock %}

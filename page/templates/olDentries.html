@@ -1,0 +1,61 @@
+{% for entrada in entradas %}
+    <div class="content">
+        <a href="{% url 'page:seeEntry' entrada.idEntry %}">
+            <h3>{{entrada.title}}</h3>
+        </a>
+        <div><span>{{entrada.dateEntry|date:"d/m/Y" }} en {{entrada.idCategory.name}} por {{entrada.autor}}</span></div>
+        {% if entrada.idLinks.count <= 1 %}
+            <div class="row">
+                {% for i in entrada.idLinks.all %}
+                    <div class="seven columns">
+                        <img src='{{ i.link }}' width="100%"><br>
+                    </div>
+                {% endfor %}
+                <div class="five columns">
+                    {{entrada.content|safe|linebreaks|truncatewords:42|slice:"-3"}}
+                    <span>
+                        <a href="{% url 'page:seeEntry' entrada.idEntry %}">...Ver Más</a>
+                    </span>
+                </div>
+            </div>
+        {% elif entrada.idLinks.count == 2 %}
+            <div class="row">
+                {% for i in entrada.idLinks.all|dictsortreversed:"pk"|slice:":2" %}
+                    <div class="six columns">
+                        <img src="{{i.link}}" width="100%">
+                    </div>
+                {% endfor %}
+            </div>
+            {{entrada.content|safe|linebreaks|truncatewords:50|slice:"-3"}}
+            <span>
+                <a href="{% url 'page:seeEntry' entrada.idEntry %}">...Ver Más</a>
+            </span>
+        {% elif entrada.idLinks.count >= 3 %}
+            <div class="row">
+                {% for i in entrada.idLinks.all|dictsortreversed:"pk"|slice:":4" %}
+                    {% if forloop.first %}
+                        <div class="nine columns">
+                            <img src="{{i.link}}" width="100%">
+                        </div>
+                        <div class="three columns">
+                        {% else %}
+                            <img src='{{ i.link }}' width="100%">
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            {{entrada.content|safe|linebreaks|truncatewords:50|slice:"-3"}}
+            <span>
+                <a href="{% url 'page:seeEntry' entrada.idEntry %}">...Ver Más</a>
+            </span>
+        {% else %}
+            {% for i in entrada.idLinks.all %}
+                <img src='{{ i.link }}' width="100%"><br>
+            {% endfor %}
+            {{entrada.content|safe|linebreaks|truncatewords:50|slice:"-3"}}
+            <span>
+                <a href="{% url 'page:seeEntry' entrada.idEntry %}">...Ver Más</a>
+            </span>
+        {% endif %}
+    </div>
+{% endfor %}

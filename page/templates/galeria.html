@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load staticfiles%}
+{% block title %}Galería - Adriex Designs{% endblock %}
+{% block body %}
+<div class="container">
+    <div class="row acereje" style="text-align:center;width:100%">
+        {% for entry in entradas|dictsortreversed:"dateEntry" %}
+            <a class="item" href="{{entry.idLinks.all.0.link}}" data-lightbox="{{ entry.pk }}" data-title="{{ entry.title }}">
+                    <img class="port content" src="{{entry.idLinks.all.0.link}}" height="150px" draggable="false" style="border-radius:0px;padding:8px;width:auto;margin:0px;margin-bottom:10px">
+            </a>
+        {% endfor %}
+    </div>
+</div>
+<script src="{% static 'js/jquery.row-grid.min.js' %}"></script>
+    <script>
+        lightbox.option({'resizeDuration': 0, 'wrapAround': true});
+
+        var options = {minMargin: 15, maxMargin: 15, itemSelector: ".item"};
+        $(".acereje").rowGrid(options);
+    </script>
+{% endblock %}

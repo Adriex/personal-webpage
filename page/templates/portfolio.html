@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load staticfiles%}
+{% block title %}Portfolio - Adriex Designs{% endblock %}
+{% block body %}
+    <div class="container">
+        {% for entry in entradas %}
+            {% cycle '<div class="row">' '' %}
+            <div class="six columns">
+                <div class="content port" style="border-radius:0px;padding:0px;font-size:0em;position:relative;">
+                    <a href="{% url 'page:seeEntry' entry.idEntry %}">
+                        <div class="row">
+                            {% for i in entry.idLinks.all|dictsortreversed:"pk"|slice:":4" %}
+                                {% cycle '' '' %}
+                                <div class="portWrap" style="background:url({{i.link}})"></div>
+                                {% cycle '' '' %}
+                            {% endfor %}
+                        </div>
+                        <div class="textEntry">
+                            <h5 style="text-align:center;margin:5px">{{entry.title}}</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% cycle '' '</div>' %}
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{% load static %}
+<meta charset="utf-8"/>
+<html>
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" href="{% static 'img/loguito.png' %}"/>
+        <title>
+            {% block title %}{% endblock %}
+        </title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/skeleton.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/owl.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/slick.css'%}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/slick-theme.css'%}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/lightbox.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style-550px.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}"/>
+        <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}"/>
+
+        <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
+    </head>
+
+    <body>
+        <div id="fb-root"></div>
+        <script>
+            (function (d, s, id) {
+                var js,
+                    fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id))
+                    return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.8";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'))
+        </script>
+        <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+        <script src="{% static 'js/jquery.row-grid.min.js' %}"></script>
+        <script src="{% static 'js/lightbox-plus-jquery.js' %}"></script>
+        <!--<script src="{% static 'js/owl.carousel.js' %}"></script>-->
+        <div>
+        <a href="{% url 'page:index' %}"><img id='home-logo' src="{% static 'img/logo.png' %}"></a>
+      </div>
+        <div class='nav-bar'>
+            <ul>
+                <a href='{% url "page:index" %}'>
+                    <li>
+                        <button class='nav-element'>Home</button>
+                    </li>
+                </a>
+                <a href='{% url "page:portfolio" %}'>
+                    <li>
+                        <button class='nav-element'>portfolio</button>
+                    </li>
+                </a>
+                <a href='{% url "page:gallery" %}'>
+                    <li>
+                        <button class='nav-element'>Galería</button>
+                    </li>
+                </a>
+                <a href='{% url "page:contact" %}'>
+                    <li>
+                        <button class='nav-element'>contacto</button>
+                    </li>
+                </a>
+            </ul>
+        </div>
+        {% block body %}{% endblock %}
+        <script type="text/javascript" src="{% static 'js/slick.min.js'%}"></script>
+      </body>
+    <footer>
+        <div class="footer">
+            <div id="social">
+              {% for so in social %}
+                <a href="{{so.link}}">
+                  <span class="fa-stack {{so.fA_size}}">
+                      <i style="color:{{so.fA_bkColor}}" class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa {{so.fA_brand}} fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              {% endfor %}
+            </div>
+            Adriex Designs© 2016
+        </div>
+    </footer>
+</html>

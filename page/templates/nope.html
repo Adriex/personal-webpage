@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load staticfiles%}
+{% block title %}Adriex Designs{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="nine columns">
+                <div class="content">
+                    <h2 style="text-align:center">No se ha encontrado nada</h2>
+                    <img style="border-radius:20px" src="{% static 'img/foca404.jpg' %}" width="100%">
+                    <h5>
+                        <a href="{% url 'page:index' %}">Volver</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="three columns">
+                {% include 'leftMenu.html' %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
